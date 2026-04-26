@@ -62,26 +62,24 @@
  * each mode's dialog box
  *************************************************************************/
  for (let i = 0; i < GlobalDialogActionButtons.length; ++i) {
-    GlobalDialogActionButtons[i].addEventListener("click",function(e) {
-        //Hide dialog box
-        GlobalModeActionDialogs[i].classList.add("hidden");
-        //Show tab panel
-        GlobalModeTabPanels[i].classList.remove("hidden");
-        //Show and enable other UI elements
-        GlobalMenuBtn.classList.remove("disabled");       
-        GlobalSearchBtn.classList.remove("disabled"); 
-        GlobalProfileBtn.classList.remove("disabled");                                 
-        GlobalSkipLink.classList.remove("hidden"); 
-        GlobalModeTabsContainer.classList.remove("disabled"); 
-        //Set focus to floating action button
-        GlobalModeActionButtons[i].focus();
-        //TO DO: Implement mode-specific functionality
-        if (GlobalHistoryLogging) {
-            history.back();
-            console.log("Console: In GlobalDialogActionButtons click handler; moving history stack pointer to previous frame.");
-        }
-    });
+    GlobalModeActionButtons[i].addEventListener("click",
+    () => transitionToDialog(GlobalModeActionDialogs[i],GlobalDialogTitles[i],GlobalDialogPrepFuncs[i]));
 }
+
+// //Hide tab panel
+    // GlobalModeTabPanels[GlobalCurrentMode.get()].classList.add("hidden");
+    // //Hide and disable all UI elements
+    // GlobalMenuBtn.classList.add("disabled");
+    // GlobalSearchBtn.classList.add("disabled");
+    // GlobalProfileBtn.classList.add("disabled");
+    // GlobalSkipLink.classList.add("hidden"); 
+    // GlobalModeTabsContainer.classList.add("disabled");
+    // //Show dialog box
+    // GlobalModeActionDialogs[GlobalCurrentMode.get()].classList.remove("hidden");
+    // //Set focus to dialog box's action button
+    // GlobalDialogActionButtons[GlobalCurrentMode.get()].focus();
+    //});
+
 
 /*************************************************************************
  * @function Dialog Box Cancel Button CLICK handler 
