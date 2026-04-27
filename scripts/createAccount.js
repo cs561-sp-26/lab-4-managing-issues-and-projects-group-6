@@ -94,3 +94,96 @@ function createAccount() {
     GlobalAccountCreatedEmail.textContent = newAcct.email;
     GlobalAccountCreated.classList.remove("hidden");
 }
+
+/*************************************************************************
+ * @function createAccountForm SUBMIT Handler 
+ * @Desc 
+ * When the user clicks on the "Create Account" button, we first check the
+ * validity of the fields, presenting accessible
+ * error notifications if errors exist. If no errors exist, we
+ * call the createAccount() function, passing in the account data
+ * @global GlobalCreateAccountForm: the <form> element whose 
+ *         SUBMIT handler is triggered
+ * @global GlobalAcctEmailField: Form's email field
+ * @global GlobalAcctPasswordField: Form's password field
+ * @global GlobalAcctPasswordRepeatField: Form's repeat pw field
+ * @global GlobalAcctDisplayNameField: Form's display name field
+ * @global GlobalAcctSecurityQuestionField: Form's security q field
+ * @global GlobalAcctSecurityAnswerField: Form's security answ field
+ * @global GlobalAcctErrBox: <div> containing the error messages
+ * @global GlobalAcctEmailErr: Error message for email field
+ * @global GlobalAcctPasswordErr: Error message for password field
+ * @global GlobalAcctRepeatPasswordErr: Error message for repeat pw field
+ * @global GlobalAcctDisplaynameErr: Error message for display name field
+ * @global GlobalAcctSecurityQuestionErr: Error message for security q field
+ * @global GlobalAcctSecurityAnswerErr: Error message for security answ field
+ *************************************************************************/
+  createAccountForm.addEventListener("submit",function(e) {
+    e.preventDefault(); //Prevent default submit behavior
+    //Is the email field valid?
+    let emailValid = !GlobalAcctEmailField.validity.typeMismatch && 
+                     !GlobalAcctEmailField.validity.valueMissing;
+    //Is the password field valid?
+    let passwordValid = !GlobalAcctPasswordField.validity.patternMismatch && 
+                        !GlobalAcctPasswordField.validity.valueMissing;
+    let repeatPasswordValid = (GlobalAcctPasswordField.value === 
+                               GlobalAcctPasswordRepeatField.value);
+    let displayNameValid = !GlobalAcctDisplayNameField.validity.tooShort &&
+                           !GlobalAcctDisplayNameField.validity.valueMissing;
+    let securityQuestionValid = !GlobalAcctSecurityQuestionField.validity.tooShort &&
+                                !GlobalAcctSecurityQuestionField.validity.valueMissing;
+    let securityAnswerValid = !GlobalAcctSecurityAnswerField.validity.tooShort &&
+                              !GlobalAcctSecurityAnswerField.validity.valueMissing;
+    if (emailValid && passwordValid && repeatPasswordValid &&
+        displayNameValid && securityQuestionValid & securityAnswerValid) { 
+        //All is well -- Call createAccount()
+       createAccount();
+       return;
+    }
+    //If here, at least one field is invalid: Display the errors
+    //and allow user to fix them.
+    GlobalAcctErrBox.classList.remove("hidden");
+    document.title = "Error: Create Account";
+    if (!securityAnswerValid) { //Display name field is invalid
+        GlobalAcctSecurityAnswerErr.classList.remove("hidden");
+        GlobalAcctSecurityAnswerErr.focus();
+        GlobalFirstFocusableCreateAccountItem.set(GlobalAcctSecurityAnswerErr);
+    } else {
+        GlobalAcctSecurityAnswerErr.classList.add("hidden");
+    }
+    if (!securityQuestionValid) { //Display name field is invalid
+        GlobalAcctSecurityQuestionErr.classList.remove("hidden");
+        GlobalAcctSecurityQuestionErr.focus();
+        GlobalFirstFocusableCreateAccountItem.set(GlobalAcctSecurityQuestionErr);
+    } else {
+        GlobalAcctSecurityQuestionErr.classList.add("hidden");
+    } 
+    if (!displayNameValid) { //Display name field is invalid
+        GlobalAcctDisplayNameErr.classList.remove("hidden");
+        GlobalAcctDisplayNameErr.focus();
+        GlobalFirstFocusableCreateAccountItem.set(GlobalAcctDisplayNameField);
+    } else {
+        GlobalAcctDisplayNameErr.classList.add("hidden");
+    } 
+    if (!repeatPasswordValid) { //Password repeat field is invalid
+        GlobalAcctPasswordRepeatErr.classList.remove("hidden");
+        GlobalAcctPasswordRepeatErr.focus();
+        GlobalFirstFocusableCreateAccountItem.set(GlobalAcctPasswordRepeatErr);
+    } else {
+        GlobalAcctPasswordRepeatErr.classList.add("hidden");
+    } 
+    if (!passwordValid) { //Password field is invalid
+        GlobalAcctPasswordErr.classList.remove("hidden");
+        GlobalAcctPasswordErr.focus();
+        GlobalFirstFocusableCreateAccountItem.set(GlobalAcctPasswordErr);
+    } else {
+        GlobalAcctPasswordErr.classList.add("hidden");
+    } 
+    if (!emailValid) { //Email field is invalid
+        GlobalAcctEmailErr.classList.remove("hidden");
+        GlobalAcctEmailErr.focus();
+        GlobalFirstFocusableCreateAccountItem.set(GlobalAcctEmailErr);
+    } else {
+        GlobalAcctEmailErr.classList.add("hidden");
+    }
+ });
