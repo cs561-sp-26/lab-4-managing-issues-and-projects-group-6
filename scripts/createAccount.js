@@ -20,6 +20,31 @@ GlobalCreateAccountBtn.addEventListener("click",function(e) {
 });
 
 /*************************************************************************
+ * @function acctProfilePicField CHANGE Handler 
+ * @Desc 
+ * When the user finishes interacting with the File picker dialog box,
+ * update the user's profile picture based on the selection from the
+ * file picker. If the user cancels out of the File Picker, the input
+ * element's value will be empty and we set the profile picture to the
+ * default picture.
+ * @global acctProfilePicField: The "Create Account" form field 
+ *         containing the optional profile picture
+ * @global acctProfilePicImage: The "Create Account" <img> element that
+ *         displays the user's profile picture (possibly the default)
+ *************************************************************************/
+ GlobalAcctProfilePicField.addEventListener("change",function(e) {
+    if (GlobalAcctProfilePicField.value.length !== 0) {
+        const reader = new FileReader();
+        reader.readAsDataURL(GlobalAcctProfilePicField.files[0]);
+        reader.addEventListener("load",function() {
+            GlobalAcctProfilePicImage.setAttribute("src",this.result);
+        });
+    } else {
+        GlobalAcctProfilePicImage.setAttribute("src",GlobalDefaultProfilePic);
+    }
+});
+
+/*************************************************************************
  * @function createAccount 
  * @desc 
  * Given a JavaScript object containing a new account, create the account,
