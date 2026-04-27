@@ -122,3 +122,20 @@
     GlobalProfileClubCommentsField.value = GlobalUserData.speedgolfInfo.clubComments;
     GlobalProfileEmailField.focus(); //Set focus to first field.
 }
+/*************************************************************************
+ * @function profileBtn CLICK Handler 
+ * @Desc 
+ * When the user clicks their profile picture, hide the menu button, tabs,
+ * and current tab panel, and show the "Account and Profile Settings" Dialog
+ * @global GlobalMenuBtn: The menu button
+ * @global GlobalModeTabsContainer: The mode tabs
+ * @global GlobalModeTabPanels: array of tab panels 
+ * @global GlobalCurrentMode, index of current mode.
+ * @global GlobalProfileSettingsDialog: The "Account and Profile Settings" 
+ *         dialog
+ *************************************************************************/
+ GlobalProfileBtn.addEventListener("click", function(e) {
+    transitionToDialog(GlobalProfileSettingsDialog, "Edit Account and Profile",populateProfileSettingsForm);
+    //populateProfileSettingsForm();
+    GlobalProfileEmailField.focus();
+});
