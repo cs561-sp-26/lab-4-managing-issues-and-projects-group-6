@@ -12,7 +12,15 @@
  * @param password: String entered into Password field of "Log In" form
  *************************************************************************/
 function validAccount(email, password) {
-
+    let acct = localStorage.getItem(email);
+    if (acct === null) {
+        return false;
+    }
+    acct = JSON.parse(acct);
+    if (acct.accountInfo.password !== password) {
+        return false;
+    }
+    return true;
 }
 
 /*************************************************************************
