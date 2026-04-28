@@ -75,3 +75,52 @@ if (GlobalUserData.rounds.length == 1) {
 }
 }
 
+/*************************************************************************
+* @function logRound 
+* @desc 
+* Build a JavaScript object containing a new round data, save the
+* round to localStorage, update the "Rounds"table, return the user to 
+* "Rounds" mode page, and display a toast message indicating that a 
+* new round was logged.
+* @global GlobalLoginPage: The "Log In" page
+* @global GlobalRoundDate: The date field in "Log Round" form
+* @global GlobalRoundCourse: The course field in "Log Round" form
+* @global GlobalRoundType: The type field in "Log Round" form
+* @global GlobalRoundHoles: The holes field in "Log Round" form
+* @global GlobalRoundStrokes: The strokes field in "Log Round" form
+* @global GlobalRoundMinutes: The minutes field in "Log Round" form
+* @global GlobalRoundSeconds: The seconds field in "Log Round" form
+* @global GlobalRoundMinutes: The minutes field in "Log Round" form
+* @global GlobalRoundSGS: The SGS field in "Log Round" form
+* @global GlobalRoundNotes: The round updated toast notification
+* @global GlobalRoundUpdatedMsg: Reference to notification toast
+* @global GlobalRoundUpdatedMsg: The message field of the round updated toast
+*************************************************************************/
+function logRound() {
+//Create new object with form data
+const newRound = {
+  date: GlobalRoundDate.value,
+  course: GlobalRoundCourse.value,
+  type: GlobalRoundType.value,
+  holes: GlobalRoundHoles.value,
+  strokes: GlobalRoundStrokes.value,
+  minutes: GlobalRoundMinutes.value,
+  seconds: GlobalRoundSeconds.value,
+  SGS: GlobalRoundSGS.value,
+  notes: GlobalRoundNotes.value,
+  roundNum: ++(GlobalUserData.roundCount)
+};
+//Push round object to end of rounds array
+GlobalUserData.rounds.push(newRound);
+//Save to local storage
+localStorage.setItem(GlobalUserData.accountInfo.email,
+  JSON.stringify(GlobalUserData));
+//Reset form to prepare for next visit
+resetLogRoundForm();
+//Add new round to table
+addRoundToTable(GlobalUserData.rounds.length-1)
+//Transition back to mode page
+GlobalRoundUpdatedMsg.textContent = "New Round Logged!";
+GlobalRoundUpdated.classList.remove("hidden");
+transitionFromDialog(GlobalRoundsModeDialog);
+}
