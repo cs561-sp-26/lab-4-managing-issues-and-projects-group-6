@@ -45,6 +45,44 @@ GlobalCreateAccountBtn.addEventListener("click",function(e) {
 });
 
 /*************************************************************************
+ * @function resetCreateAccountForm 
+ * @Desc 
+ * When the user exits the "Create Account" Dialog, reset the form to
+ * show blank data in case the form is visited again.
+ * @global GlobalAcctEmailField: Form's email field
+ * @global GlobalAcctPasswordField: Form's password field
+ * @global GlobalAcctPasswordRepeatField: Form's repeat pw field
+ * @global GlobalAcctDisplayNameField: Form's display name field
+ * @global GlobalAcctSecurityQuestionField: Form's security q field
+ * @global GlobalAcctSecurityAnswerField: Form's security answ field
+ * @global GlobalAcctErrBox: <div> containing the error messages
+ * @global GlobalAcctEmailErr: Error message for email field
+ * @global GlobalAcctPasswordErr: Error message for password field
+ * @global GlobalAcctRepeatPasswordErr: Error message for repeat pw field
+ * @global GlobalAcctDisplaynameErr: Error message for display name field
+ * @global GlobalAcctSecurityQuestionErr: Error message for security q field
+ * @global GlobalAcctSecurityAnswerErr: Error message for security answ field
+ *************************************************************************/
+ function resetCreateAccountForm() {
+    GlobalAcctEmailField.value = "";
+    GlobalAcctPasswordField.value = "";
+    GlobalAcctPasswordRepeatField.value = "";
+    GlobalAcctDisplayNameField.value = "";
+    GlobalAcctProfilePicField.value = "";
+    GlobalAcctProfilePicImage.setAttribute("src",GlobalDefaultProfilePic);
+    GlobalAcctSecurityQuestionField.value = "";
+    GlobalAcctErrBox.classList.add("hidden");
+    GlobalAcctSecurityAnswerField.value = "";
+    GlobalAcctEmailErr.classList.add("hidden");
+    GlobalAcctPasswordErr.classList.add("hidden");
+    GlobalAcctPasswordRepeatErr.classList.add("hidden");
+    GlobalAcctDisplayNameErr.classList.add("hidden");
+    GlobalAcctSecurityQuestionErr.classList.add("hidden");
+    GlobalAcctSecurityAnswerErr.classList.add("hidden");
+    GlobalFirstFocusableCreateAccountItem.set(GlobalAcctEmailField);
+}
+
+/*************************************************************************
  * @function createAccount 
  * @desc 
  * Given a JavaScript object containing a new account, create the account,
