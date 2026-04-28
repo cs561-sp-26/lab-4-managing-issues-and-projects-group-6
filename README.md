@@ -46,7 +46,7 @@ GitHub Projects was chosen because it integrates directly with our repository, a
 | Akaash Bella | 5
 | Gagan Kashyap Muralidhara | x 
 | Kaveenaya Srinivasagam Omkumar | x
-| Trisha Gopinath | x
+| Trisha Gopinath | 7
 | Roshan Aditya Murali | x
 | **Total** | **x** 
 
@@ -54,7 +54,8 @@ GitHub Projects was chosen because it integrates directly with our repository, a
 
 | # | Title       | Feeature Branch | Assigned To | Story Points | Date Started | Date Completed
 |---|-------------|-----------------|-------------|---------------|-------------|---------------
-|[#23](url)|Create mode bar | `feature/mode_bar` | Chris | 3 | 4/15/25 | 4/17/25
+|[#39](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/39)|Implement account and profile editing |`feature/edit-profile` | Trish | 8 | 4/27/26 | 4/27/26
+
 
 
 ## Read.ai Planning Poker Meeting Report Link
