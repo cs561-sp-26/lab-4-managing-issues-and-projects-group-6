@@ -55,8 +55,24 @@ function resetLoginForm() {
  * @global GlobalSearchBtn: The search button in the top banner bar
  * @global GlobalProfileBtn: The profile picture button in the top banner bar
  *************************************************************************/
- function login(userId) {
-
+function login(userId) {
+    //1. Reset the login form in case user logs in again
+    resetLoginForm();
+    //2. Place user acct data of logged in user in global JS object
+    GlobalUserData = JSON.parse(localStorage.getItem(userId));
+    //3. Populate the "Rounds" table
+    populateRoundsTable();
+    //2. Reset state of app with user logged in.
+    GlobalLoginPage.classList.add("hidden");
+    GlobalModeTabsContainer.classList.remove("hidden");
+    GlobalModeTabPanels[GlobalCurrentMode.get()].classList.remove("hidden");
+    GlobalMenuBtn.classList.remove("hidden");
+    GlobalMenu.classList.remove("hidden");
+    GlobalSearchBtn.classList.remove("hidden");
+    GlobalProfileBtn.classList.remove("hidden");
+    GlobalProfileBtn.style.backgroundImage = "url(" + GlobalUserData.identityInfo.profilePic + ")";
+    document.title = "SpeedScore: Activity Feed";
+    GlobalSkipLink.focus(); //Force initial focus on skip link
 }
 
 /*************************************************************************
