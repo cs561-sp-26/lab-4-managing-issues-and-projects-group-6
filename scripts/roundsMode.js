@@ -126,6 +126,104 @@ transitionFromDialog(GlobalRoundsModeDialog);
 }
 
 /*************************************************************************
+* @function logRoundForm SUBMIT Handler 
+* @Desc 
+* When the user clicks on the "Add Round" button, we first check the
+* validity of the fields, presenting accessible
+* error notifications if errors exist. If no errors exist, we
+* call the logRound() function, passing in the round data
+* @global createAccountForm: the <form> element whose 
+*         SUBMIT handler is triggered
+* @global GlobalRoundDate: the field containing the round date
+* @global GlobalRoundCourse: the course of the round
+* @global GlobalRoundStrokes: the number of strokes taken in the round
+* @global GlobalRoundMinutes: the number of minutes taken in the round
+* @global GlobalRoundSeconds: the number of seconds taken in teh round
+* @global GlobalRoundNotes: the notes on the round
+*************************************************************************/
+GlobalLogRoundForm.addEventListener("submit",function(e) {
+e.preventDefault(); //Prevent default submit behavior
+//Is the date valid?
+let dateValid = !GlobalRoundDate.validity.valueMissing;
+//Is the course field valid?
+let courseValid = !GlobalRoundCourse.validity.tooLong && 
+                  !GlobalRoundCourse.validity.valueMissing;
+//Is the password field valid?
+let strokesValid = !GlobalRoundStrokes.validity.typeMismatch &&
+                   !GlobalRoundStrokes.validity.rangeUnderflow &&
+                   !GlobalRoundStrokes.validity.rangeOverflow && 
+                   !GlobalRoundStrokes.validity.valueMissing;
+//Is the minutes field valid?
+let minutesValid = !GlobalRoundMinutes.validity.typeMismatch &&
+                   !GlobalRoundMinutes.validity.rangeUnderflow &&
+                   !GlobalRoundMinutes.validity.rangeOverflow && 
+                   !GlobalRoundMinutes.validity.valueMissing;
+//Is the seconds field valid?
+let secondsValid = !GlobalRoundSeconds.validity.typeMismatch &&
+                   !GlobalRoundSeconds.validity.rangeUnderflow &&
+                   !GlobalRoundSeconds.validity.rangeOverflow && 
+                   !GlobalRoundSeconds.validity.valueMissing;
+//Is the notes field valid?
+let notesValid = !GlobalRoundNotes.validity.tooLong;
+if (courseValid && strokesValid && minutesValid &&
+    secondsValid && notesValid &&dateValid) { 
+    //All is well -- log round or update round
+    if (GlobalRoundFormSubmitBtnIcon.classList.contains("fa-save")) {
+      logRound();
+    } else {
+      updateRound();
+    }
+   return;
+}
+//If here, at least one field is invalid: Display the errors
+//and allow user to fix them.
+GlobalRoundErrBox.classList.remove("hidden");
+document.title = "Error: Log Round";
+if (!notesValid) { 
+  GlobalRound.classList.remove("hidden");
+  GlobalRoundNotesErr.focus();
+  GlobalFirstFocusableLogRoundItem.set(GlobalRoundNotesErr);
+} else {
+  GlobalRoundNotesErr.classList.add("hidden");
+}
+if (!secondsValid) { 
+  GlobalRoundSecondsErr.classList.remove("hidden");
+  GlobalRoundSecondsErr.focus();
+  GlobalFirstFocusableLogRoundItem.set(GlobalRoundSecondsErr);
+} else {
+  GlobalRoundSecondsErr.classList.add("hidden");
+}
+if (!minutesValid) { 
+  GlobalRoundMinutesErr.classList.remove("hidden");
+  GlobalRoundMinutesErr.focus();
+  GlobalFrstFocusableLogRoundItem.set(GlobalRoundMinutesErr);
+} else {
+  GlobalRoundMinutesErr.classList.add("hidden");
+}
+if (!strokesValid) { 
+  GlobalRoundStrokesErr.classList.remove("hidden");
+  GlobalRoundStrokesErr.focus();
+  GlobalFirstFocusableLogRoundItem.set(GlobalRoundStrokesErr);
+} else {
+  GlobalRoundStrokesErr.classList.add("hidden");
+}
+if (!courseValid) { 
+    GlobalRoundCourseErr.classList.remove("hidden");
+    GlobalRoundCourseErr.focus();
+    GlobalFirstFocusableLogRoundItem.set(GlobalRoundCourseErr);
+} else {
+    GlobalRoundCourseErr.classList.add("hidden");
+}
+if (!dateValid) { 
+  GlobalRoundDateErr.classList.remove("hidden");
+  GlobalRoundDateErr.focus();
+  GlobalFirstFocusableLogRoundItem.set(GlobalRoundDateErr);
+} else {
+  GlobalRoundDateErr.classList.add("hidden");
+}
+});
+
+/*************************************************************************
 * @function keyDownRoundDialogFocused 
 * @desc 
 * When the user presses a key with an element in the Log Round 
