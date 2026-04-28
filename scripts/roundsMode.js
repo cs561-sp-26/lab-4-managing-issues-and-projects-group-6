@@ -1,4 +1,15 @@
 /*************************************************************************
+* @function roundUpdatedClose CLICK Handler 
+* @desc 
+* When the user clicks on the close button of the "Round Logged"
+* toast notification on the "Rounds" mode page, close it.
+* @global roundLogged: The "Round Logged" toast
+*************************************************************************/
+GlobalRoundUpdatedClose.addEventListener("click",function() {
+GlobalRoundUpdated.classList.add("hidden");
+});
+
+/*************************************************************************
 * @function writeRoundToTable
 * @desc 
 * Given an HTML row elemnt and the index of the round to write, write
