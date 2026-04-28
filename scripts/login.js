@@ -33,8 +33,13 @@ function validAccount(email, password) {
  * @global GlobalPasswordField: The form's password field
  * @global GlobalEmailError: The error message for the email field
  *************************************************************************/
- function resetLoginForm() {
-
+function resetLoginForm() {
+    document.title = "Log in to SpeedScore";
+    GlobalErrorBox.classList.add("hidden");
+    GlobalEmailError.classList.add("hidden");
+    GlobalPasswordError.classList.add("hidden");
+    GlobalEmailField.value = "";
+    GlobalPasswordField.value = "";
 }
 
 /*************************************************************************
