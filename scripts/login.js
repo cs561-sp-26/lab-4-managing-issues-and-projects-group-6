@@ -90,6 +90,40 @@ function login(userId) {
  * @global GlobalEmailError: The error message for the email field
  * @global GlobalPasswordError: The error message for the password field
  *************************************************************************/
- loginForm.addEventListener("submit",function(e) {
-
- });
+loginForm.addEventListener("submit",function(e) {
+    e.preventDefault(); //Prevent default submti behavior
+    //Is the email field valid?
+    let emailValid = !GlobalEmailField.validity.typeMismatch && 
+                     !GlobalEmailField.validity.valueMissing;
+    //Is the password field valid?
+    let passwordValid = !GlobalPasswordField.validity.patternMismatch && 
+                        !GlobalPasswordField.validity.valueMissing;
+    //Did the user specify valid account credentials?
+    let authenticated = emailValid && passwordValid && 
+                        validAccount(GlobalEmailField.value, GlobalPasswordField.value);
+    if (authenticated) { //Log user in
+       login(GlobalEmailField.value);
+       return;
+    }
+    //If here, at least one field is invalid
+    GlobalErrorBox.classList.remove("hidden");
+    document.title = "Error: Log in to SpeedScore";
+    if (!passwordValid) { //Password field is invalid
+         GlobalPasswordError.classList.remove("hidden");
+         GlobalPasswordError.focus();
+    } else {
+         GlobalPasswordError.classList.add("hidden");
+    } 
+    if (!emailValid) { //Email field is invalid
+        GlobalEmailError.classList.remove("hidden");
+        GlobalEmailError.focus();
+    } else {
+        GlobalEmailError.classList.add("hidden");
+    }
+    if (emailValid && passwordValid) { //Authentication failed
+       GlobalAuthError.classList.remove("hidden");
+       GlobalAuthError.focus();
+    } else {
+         GlobalAuthError.classList.add("hidden");
+    }
+});
