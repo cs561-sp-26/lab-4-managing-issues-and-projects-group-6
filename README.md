@@ -57,6 +57,7 @@ GitHub Projects was chosen because it integrates directly with our repository, a
 |[#39](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/39)|Implement account and profile editing |`feature/edit-profile` | Trish | 8 | 4/27/26 | 4/27/26
 |[#16](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/16)|Immplement account creation form |`feature/create-account` | Kaveenaya | 3 | 4/25/26 | 4/27/26 |
 |[#24](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/24)|Immplement rounds table display |`feature/rounds-table` | Kaveenaya | 4 | 4/25/26 | 4/27/26 |
+|[#31](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/31)|Add sorting and search to rounds table |`feature/rounds-mode` | Gagan | 8 | 4/26/26 | 4/27/26 |
 
 
 
