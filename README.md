@@ -48,16 +48,18 @@ GitHub Projects was chosen because it integrates directly with our repository, a
 | Kaveenaya Srinivasagam Omkumar | 15 |
 | Trisha Gopinath | 7 |
 | Roshan Aditya Murali | 16 |
-| **Total** | **X** |
+| **Total** | **58** |
 
 ## Issues
 
 | # | Title | Feature Branch | Assigned To | Story Points | Date Started | Date Completed |
 |---|-------|----------------|-------------|--------------|-------------|----------------|
-|[#39](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/39)|Implement account and profile editing|`feature/edit-profile`|Trisha|8|4/27/26|4/27/26|
+|[#1](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/1)|Implement login page interface|`feature/login-ui`|Akaash|3|4/26/26|4/27/26|
+|[#8](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/8)|Add login validation and authentication flow|`feature/login-auth`|Akaash|5|4/26/26|4/27/26|
 |[#16](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/16)|Implement account creation form|`feature/create-account`|Kaveenaya|3|4/25/26|4/27/26|
 |[#24](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/24)|Implement rounds table display|`feature/rounds-table`|Kaveenaya|4|4/25/26|4/27/26|
 |[#31](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/31)|Add sorting and search to rounds table|`feature/rounds-mode`|Gagan|8|4/26/26|4/27/26|
+|[#39](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/39)|Implement account and profile editing|`feature/edit-profile`|Trisha|8|4/27/26|4/27/26|
 |[#47](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/47)|Implement side menu and navigation behavior|`feature/side-menu`|Roshan Aditya Murali|3|4/25/26|4/26/26|
 |[#54](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/54)|Set up Playwright testing environment|`feature/playwright-tests`|Roshan Aditya Murali|8|4/26/26|4/27/26|
 
