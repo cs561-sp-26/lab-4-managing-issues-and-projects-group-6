@@ -45,7 +45,7 @@ GitHub Projects was chosen because it integrates directly with our repository, a
 | --------- | -----------
 | Akaash Bella | 5
 | Gagan Kashyap Muralidhara | 15 
-| Kaveenaya Srinivasagam Omkumar | x
+| Kaveenaya Srinivasagam Omkumar | 15
 | Trisha Gopinath | 7
 | Roshan Aditya Murali | x
 | **Total** | **x** 
@@ -55,6 +55,8 @@ GitHub Projects was chosen because it integrates directly with our repository, a
 | # | Title       | Feeature Branch | Assigned To | Story Points | Date Started | Date Completed
 |---|-------------|-----------------|-------------|---------------|-------------|---------------
 |[#39](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/39)|Implement account and profile editing |`feature/edit-profile` | Trish | 8 | 4/27/26 | 4/27/26
+|[#16](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/16)|Immplement account creation form |`feature/create-account` | Kaveenaya | 3 | 4/25/26 | 4/27/26 |
+|[#24](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/24)|Immplement rounds table display |`feature/rounds-table` | Kaveenaya | 4 | 4/25/26 | 4/27/26 |
 
 
 
