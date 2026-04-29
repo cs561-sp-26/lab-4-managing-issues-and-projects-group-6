@@ -41,25 +41,25 @@ GitHub Projects was chosen because it integrates directly with our repository, a
 
 ## Commits
 
-| Name | # Commits 
-| --------- | -----------
-| Akaash Bella | 5
-| Gagan Kashyap Muralidhara | 15 
-| Kaveenaya Srinivasagam Omkumar | 15
-| Trisha Gopinath | 7
-| Roshan Aditya Murali | x
-| **Total** | **x** 
+| Name | # Commits |
+| --------- | ----------- |
+| Akaash Bella | 5 |
+| Gagan Kashyap Muralidhara | 15 |
+| Kaveenaya Srinivasagam Omkumar | 15 |
+| Trisha Gopinath | 7 |
+| Roshan Aditya Murali | 16 |
+| **Total** | **X** |
 
 ## Issues
 
-| # | Title       | Feeature Branch | Assigned To | Story Points | Date Started | Date Completed
-|---|-------------|-----------------|-------------|---------------|-------------|---------------
-|[#39](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/39)|Implement account and profile editing |`feature/edit-profile` | Trish | 8 | 4/27/26 | 4/27/26
-|[#16](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/16)|Immplement account creation form |`feature/create-account` | Kaveenaya | 3 | 4/25/26 | 4/27/26 |
-|[#24](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/24)|Immplement rounds table display |`feature/rounds-table` | Kaveenaya | 4 | 4/25/26 | 4/27/26 |
-|[#31](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/31)|Add sorting and search to rounds table |`feature/rounds-mode` | Gagan | 8 | 4/26/26 | 4/27/26 |
-
-
+| # | Title | Feature Branch | Assigned To | Story Points | Date Started | Date Completed |
+|---|-------|----------------|-------------|--------------|-------------|----------------|
+|[#39](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/39)|Implement account and profile editing|`feature/edit-profile`|Trisha|8|4/27/26|4/27/26|
+|[#16](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/16)|Implement account creation form|`feature/create-account`|Kaveenaya|3|4/25/26|4/27/26|
+|[#24](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/24)|Implement rounds table display|`feature/rounds-table`|Kaveenaya|4|4/25/26|4/27/26|
+|[#31](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/31)|Add sorting and search to rounds table|`feature/rounds-mode`|Gagan|8|4/26/26|4/27/26|
+|[#47](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/47)|Implement side menu and navigation behavior|`feature/side-menu`|Roshan Aditya Murali|5|4/25/26|4/26/26|
+|[#54](https://github.com/cs561-sp-26/lab-4-managing-issues-and-projects-group-6/issues/54)|Set up Playwright testing environment|`feature/playwright-tests`|Roshan Aditya Murali|3|4/26/26|4/27/26|
 
 ## Read.ai Planning Poker Meeting Report Link
 [Project link](https://app.read.ai/analytics/meetings/01KQ8JAQNF1W9W3NXW6RGWWBGH?utm_source=Share_CopyLink)
