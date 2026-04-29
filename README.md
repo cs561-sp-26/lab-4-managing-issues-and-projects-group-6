@@ -44,7 +44,7 @@ GitHub Projects was chosen because it integrates directly with our repository, a
 | Name | # Commits 
 | --------- | -----------
 | Akaash Bella | 5
-| Gagan Kashyap Muralidhara | x 
+| Gagan Kashyap Muralidhara | 15 
 | Kaveenaya Srinivasagam Omkumar | x
 | Trisha Gopinath | 7
 | Roshan Aditya Murali | x
